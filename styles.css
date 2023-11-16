@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    font-family: 'Consolas', monospace;
+    background-color: black;
+    color: white;
+}
+
+.terminal-container {
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.terminal {
+    flex: 1;
+    background-color: black;
+    border: 1px solid white;
+    padding: 10px;
+    white-space: pre-wrap;
+    overflow-x: hidden;
+    display: flex;
+    align-items: baseline;
+}
+
+#prompt-text {
+    color: red;
+}
+
+#command-input {
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    font-family: 'Consolas', monospace;
+    flex: 1; /* Hace que el input ocupe todo el espacio restante */
+    width: 100%;
+}
