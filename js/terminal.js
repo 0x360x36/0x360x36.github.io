@@ -30,12 +30,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 outputDiv.textContent = `
     Commands:
     \t- help: Display this message.
+    \t- clear: Clear the terminal.
     \t- date: Returns the current date.
     \t- ls: List files.
     \t- wget {file}: Download the file.
     \t- socials: Display links to my socials.
                                         `;
             break;
+
+            case 'clear':
+                terminal.innerHTML = '';
+                break;
 
             case 'socials':
                 const linkedin = document.createElement('a');
