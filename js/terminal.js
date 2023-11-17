@@ -38,6 +38,10 @@ document.addEventListener('DOMContentLoaded', function () {
                                         `;
                 break;
 
+            case '':
+                outputDiv.textContent = '';
+                break;
+
             case 'clear':
                 terminal.innerHTML = '';
                 break;
@@ -50,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 outputDiv.appendChild(linkedin);
             
                 outputDiv.appendChild(document.createTextNode('\n'));
-            
+
                 const github = document.createElement('a');
                 github.href = 'https://github.com/stolenh0ff'
                 github.textContent = 'GitHub';
