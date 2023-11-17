@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
     \t- wget {file}: Download the file.
     \t- socials: Display links to my socials.
                                         `;
-            break;
+                break;
 
             case 'clear':
                 terminal.innerHTML = '';
@@ -46,13 +46,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 const linkedin = document.createElement('a');
                 linkedin.href = 'https://www.linkedin.com/in/nimajnebs/';
                 linkedin.textContent = 'LinkedIn';
+                linkedin.target = '_blank'; // Agregado
                 outputDiv.appendChild(linkedin);
-
+            
                 outputDiv.appendChild(document.createTextNode('\n'));
-
+            
                 const github = document.createElement('a');
                 github.href = 'https://github.com/stolenh0ff'
                 github.textContent = 'GitHub';
+                github.target = '_blank'; // Agregado
                 outputDiv.appendChild(github);
                 break;
 
