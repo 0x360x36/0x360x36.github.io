@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const linkedin = document.createElement('a');
                 linkedin.href = 'https://www.linkedin.com/in/nimajnebs/';
                 linkedin.textContent = 'LinkedIn';
-                linkedin.target = '_blank'; // Agregado
+                linkedin.target = '_blank';
                 outputDiv.appendChild(linkedin);
             
                 outputDiv.appendChild(document.createTextNode('\n'));
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const github = document.createElement('a');
                 github.href = 'https://github.com/stolenh0ff'
                 github.textContent = 'GitHub';
-                github.target = '_blank'; // Agregado
+                github.target = '_blank';
                 outputDiv.appendChild(github);
                 break;
 
