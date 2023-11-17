@@ -27,14 +27,36 @@ document.addEventListener('DOMContentLoaded', function () {
         outputDiv.className = 'output';
         switch (command.toLowerCase().trim()) {
             case 'help':
-                outputDiv.textContent = 'Commands:';
+                outputDiv.textContent = `
+    Commands:
+    \t- help: Display this message.
+    \t- date: Returns the current date.
+    \t- ls: List files.
+    \t- wget {file}: Download the file.
+    \t- socials: Display links to my socials.
+                                        `;
+            break;
+
+            case 'socials':
+                const linkedin = document.createElement('a');
+                linkedin.href = 'https://www.linkedin.com/in/nimajnebs/';
+                linkedin.textContent = 'LinkedIn';
+                outputDiv.appendChild(linkedin);
+
+                outputDiv.appendChild(document.createTextNode('\n'));
+
+                const github = document.createElement('a');
+                github.href = 'https://github.com/stolenh0ff'
+                github.textContent = 'GitHub';
+                outputDiv.appendChild(github);
                 break;
+
             case 'date':
                 outputDiv.textContent = new Date().toString();
                 break;
             case 'ls':
-            outputDiv.textContent = 'index.html\nstyle.css\nterminal.js';
-            break;
+                outputDiv.textContent = '';
+                break;
 
             default:
                 outputDiv.textContent = 'Unrecognized command, type "help" \n ';
