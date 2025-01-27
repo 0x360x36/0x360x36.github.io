@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
     commandInput.id = 'command-input';
 
     let currentPrompt;
+    let commandHistory = [];
+    let historyIndex = -1;
 
     function getExternalIP(callback) {
         fetch('https://api.ipify.org?format=json')
@@ -35,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     \t- date: Returns the current date.
     
     Info
-    \t- cv: Displays the CV (Curriculum Vitae)
+    \t- cv: Display a link to download CV in pdf format.
     \t- socials: Display links to my socials.
                                         `;
                 break;
@@ -105,6 +107,21 @@ document.addEventListener('DOMContentLoaded', function () {
             const command = commandInput.value;
             commandInput.value = '';
             executeCommand(command);
+            commandHistory.push(command);
+            historyIndex = commandHistory.length;
+        } else if (event.key === 'ArrowUp') {
+            if (historyIndex > 0) {
+                historyIndex--;
+                commandInput.value = commandHistory[historyIndex];
+            }
+        } else if (event.key === 'ArrowDown') {
+            if (historyIndex < commandHistory.length - 1) {
+                historyIndex++;
+                commandInput.value = commandHistory[historyIndex];
+            } else {
+                historyIndex = commandHistory.length;
+                commandInput.value = '';
+            }
         }
     });
 
