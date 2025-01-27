@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function createPrompt(ip) {
         const promptDiv = document.createElement('div');
         promptDiv.className = 'prompt';
-        promptDiv.textContent = ip + '@stolenh0ff.github.io:~$ ';
-        commandInput.placeholder = 'type "help"'; // Agrega esta línea
+        promptDiv.textContent = ip + '@0x360x36.github.io:~$ ';
+        commandInput.placeholder = 'type "help"';
         promptDiv.appendChild(commandInput);
         return promptDiv;
     }
@@ -49,54 +49,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 break;
 
             case 'cv':
-                outputDiv.textContent = `
-                        ### Benjamín Sepúlveda ###
-
-        Hi!, I'm Benjamín, currently finishing my undergraduate degree in Network Engineering
-        at DUOC UC, i'm really interested in everything related about security oriented to
-        virtual environments and network.
-
-        I describe myself as a creative, proactive, and resilient individual when it comes
-        to finding solutions and solving problems. My main interests revolve around information
-        technologies, security, and information protection within the field of computer
-        science (IT). Therefore, I am constantly seeking relevant knowledge on these topics.
-        
-        Currently I'm working as a Threat Intelligence Analyst, conducting research on
-        vulnerabilities and identifying potential threat actors that pose a risk to organizations.
-
-    ## Experience
-
-        NOUS - Threat Intelligence Analyst Intern
-            (June 2023 - December 2023)
-            I worked at NOUS as a threat intelligence analyst helping the team
-            investigate potential risks to organizations by analyzing vulnerabilities.
-            I've also built an API in Python and a few tools to automate and optimize
-            processes within the department.
-
-    ## Skills
-
-        Platforms
-            - Linux Based Distros
-            - Windows
-            - Mac
-        
-        Programming Languages
-            - Python
-            - Bash
-            - Web (Javascript, HTML, CSS)
-
-    ## Education
-        
-        Network Engineering - DUOC UC (2019 - 2023)
-        Microsoft Certified: Azure Fundamentals - Microsoft (June - 2023)
-        CCNP: Core Networking - Cisco (August - 2022)
-        CyberSecurity Essentials - Cisco (January - 2023)
-
-    ## Languages
-        - Spanish (Native)
-        - English (Proficient)
-
-                                        `;
+                const cvLink = document.createElement('a');
+                cvLink.href = 'assets/CV3.pdf'; // Asegúrate de que esta ruta sea correcta
+                cvLink.download = 'Benjamin_Sepulveda_CV.pdf';
+                cvLink.textContent = 'Download CV\nsha256: 2bf5119dd59d0dcda0b37136e077bf17f49509fce9f5763f01e9e8700846d348';
+                outputDiv.appendChild(cvLink);
                 break;
 
             case 'socials':
@@ -109,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 outputDiv.appendChild(document.createTextNode('\n'));
             
                 const github = document.createElement('a');
-                github.href = 'https://github.com/stolenh0ff'
+                github.href = 'https://github.com/0x360x36'
                 github.textContent = 'GitHub';
                 github.target = '_blank';
                 outputDiv.appendChild(github);
